@@ -1,6 +1,6 @@
 //Maya ASCII 2016 scene
 //Name: TextureDeformer.ma
-//Last modified: Mon, Nov 16, 2015 05:46:31 PM
+//Last modified: Mon, Nov 16, 2015 06:06:05 PM
 //Codeset: 1252
 requires maya "2016";
 currentUnit -l centimeter -a degree -t film;
@@ -12,8 +12,8 @@ fileInfo "osv" "Microsoft Windows 8 Business Edition, 64-bit  (Build 9200)\n";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "E0E83E49-4A87-886A-A8C3-1792CA49DEED";
-	setAttr ".t" -type "double3" -5.0708506358226373 3.4899283735770745 0.20186796624883696 ;
-	setAttr ".r" -type "double3" -11.138352726631323 272.20000000000169 0 ;
+	setAttr ".t" -type "double3" -4.0079161227135316 4.8156892328201053 -2.3619830663363421 ;
+	setAttr ".r" -type "double3" -26.138352726629421 240.59999999999891 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "54D39CE9-4F56-F9DD-7379-D595DD9A6B27";
 	setAttr -k off ".v";
