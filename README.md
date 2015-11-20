@@ -8,7 +8,7 @@ Project details follow:
 
 Graphics:
 
-1. [face.ma](https://github.com/pemj/MayaPy/blob/master/graphics/face.ma)
+1. [face.ma](https://github.com/pemj/MayaPy/tree/master/mayaProject/scenes/Face.ma)
    * will eventualy contain the base face model.
 
 The python application will be separated into a simple layered hierarchy following a basic MVC architecture. From the GUI down to the Nimble Bridge, our architecture will be the following:
