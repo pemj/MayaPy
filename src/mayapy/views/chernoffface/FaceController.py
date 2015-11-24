@@ -1,7 +1,7 @@
 from nimble import cmds as mc
 from difflib import SequenceMatcher as sm
 
-# newVal will be between -1 and 1, with -1 representing sad and angry respectively
+# newVal will be between -100 and 100, with negative/positive representing sad and angry respectively
 def eyeBrow(newVal):
     name = "Face0"
     if newVal < 0:
@@ -11,20 +11,24 @@ def eyeBrow(newVal):
         nonSuffix = name+".eyeUp"
         suffix = name+".eyeDown"
     mc.setAttr(nonSuffix,  0.0)
-    mc.setAttr(suffix,  (newVal + 1.0)/2.0))
+    mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
 
 def eyeDistance(newVal):
     name = "Face0.eyeWidth"
-    mc.setAttr(name,  (newVal + 1.0)/2.0))
+    mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
+
+def mouthEnbiggen(newVal):
+    name = "Face0.mouthSize"
+    mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
 
 def eyeEnbiggen(newVal):
     name = "Face0.eyeSize"
-    mc.setAttr(name,  (newVal + 1.0)/2.0))
+    mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
 
 
 def head(newVal):
     name = "Face0.headShape"
-    mc.setAttr(name,  (newVal + 1.0)/2.0))
+    mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
 
 
 def mouth(newVal):
@@ -36,7 +40,7 @@ def mouth(newVal):
         nonSuffix = name+".mouthUp"
         suffix = name+".mouthDown"
     mc.setAttr(nonSuffix,  0.0)
-    mc.setAttr(suffix,  (newVal + 1.0)/2.0))
+    mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
 
 
     

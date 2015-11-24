@@ -10,18 +10,19 @@ import FaceController as fc
 
 #___________________________________________________________________________________________________ ChernoffFaceWidget
 class ChernoffFaceWidget(PyGlassWidget):
-    """A class for Assignment 1"""
+    """A class for the finaly Project"""
     
 #===================================================================================================
 #                                                                                       C L A S S
 #___________________________________________________________________________________________________ __init__
     def __init__(self, parent, **kwargs):
-        """Creates a new instance of Assignment3Widget."""
+        """Creates a new instance of ChernoffFaceWidget."""
         super(ChernoffFaceWidget, self).__init__(parent, **kwargs)
 	# slider pane
         self.eyebrowAngleSlider.valueChanged.connect(self._handleEyebrowChange)
         self.mouthAngleSlider.valueChanged.connect(self._handleMouthAngleChange)
         self.eyeSizeSlider.valueChanged.connect(self._handleEyeSizeChange)
+        self.mouthSizeSlider.valueChanged.connect(self._handleMouthSizeChange)
         self.headShapeSlider.valueChanged.connect(self._handleHeadShapeChange)
         self.eyeSpacingSlider.valueChanged.connect(self._handleEyeSpacingChange)
 	# nav pane
@@ -42,6 +43,13 @@ class ChernoffFaceWidget(PyGlassWidget):
         eyeSpace = self.eyeSpacingSlider.value()
 	print("eye spacing: "+str(eyeSpace))
 	fc.eyeDistance(eyeSpace)
+        
+  
+    #___________________________________________________________________________________________________ _handleValChange
+    def _handleMouthSizeChange(self):
+        mouthSize = self.mouthSizeSlider.value()
+        print("mouth size: "+str(mouthSize))
+	fc.mouthEnbiggen(mouthSize)
         
   
     #___________________________________________________________________________________________________ _handleValChange

@@ -89,7 +89,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="mouthSizeTag">
+      <widget class="QLabel" name="mouthAngleTag">
        <property name="text">
         <string>Mouth Angle:</string>
        </property>
@@ -117,6 +117,26 @@
        </property>
        <property name="tickInterval">
         <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="mouthSizeTag">
+       <property name="text">
+        <string>Mouth Size</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="mouthSizeSlider">
+       <property name="minimum">
+        <number>-100</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
