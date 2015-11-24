@@ -1,6 +1,45 @@
 from nimble import cmds as mc
 from difflib import SequenceMatcher as sm
 
+# newVal will be between -1 and 1, with -1 representing sad and angry respectively
+def eyeBrow(newVal):
+    name = "Face0"
+    if newVal < 0:
+        nonSuffix = name+".eyeUp"
+        suffix = name+".eyeDown"
+    else:
+        nonSuffix = name+".eyeUp"
+        suffix = name+".eyeDown"
+    mc.setAttr(nonSuffix,  0.0)
+    mc.setAttr(suffix,  (newVal + 1.0)/2.0))
+
+def eyeDistance(newVal):
+    name = "Face0.eyeWidth"
+    mc.setAttr(name,  (newVal + 1.0)/2.0))
+
+def eyeEnbiggen(newVal):
+    name = "Face0.eyeSize"
+    mc.setAttr(name,  (newVal + 1.0)/2.0))
+
+
+def head(newVal):
+    name = "Face0.headShape"
+    mc.setAttr(name,  (newVal + 1.0)/2.0))
+
+
+def mouth(newVal):
+    name = "Face0"
+    if newVal < 0:
+        nonSuffix = name+".mouthUp"
+        suffix = name+".mouthDown"
+    else:
+        nonSuffix = name+".mouthUp"
+        suffix = name+".mouthDown"
+    mc.setAttr(nonSuffix,  0.0)
+    mc.setAttr(suffix,  (newVal + 1.0)/2.0))
+
+
+    
 def findName(namelike):
     objs = mc.ls()
     bodyName = ""

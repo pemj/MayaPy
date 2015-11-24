@@ -18,26 +18,50 @@ class ChernoffFaceWidget(PyGlassWidget):
     def __init__(self, parent, **kwargs):
         """Creates a new instance of Assignment3Widget."""
         super(ChernoffFaceWidget, self).__init__(parent, **kwargs)
-		# slider pane
-        self.eyebrowAngleSlider.valueChanged.connect(self._handleValChange)
-        self.mouthAngleSlider.valueChanged.connect(self._handleValChange)
-        self.eyeSizeSlider.valueChanged.connect(self._handleValChange)
-        self.headShapeSlider.valueChanged.connect(self._handleValChange)
-        self.eyeSpacingSlider.valueChanged.connect(self._handleValChange)
-		# nav pane
+	# slider pane
+        self.eyebrowAngleSlider.valueChanged.connect(self._handleEyebrowChange)
+        self.mouthAngleSlider.valueChanged.connect(self._handleMouthAngleChange)
+        self.eyeSizeSlider.valueChanged.connect(self._handleEyeSizeChange)
+        self.headShapeSlider.valueChanged.connect(self._handleHeadShapeChange)
+        self.eyeSpacingSlider.valueChanged.connect(self._handleEyeSpacingChange)
+	# nav pane
         self.runBtn.clicked.connect(self._handleRunBtn)
         self.homeBtn.clicked.connect(self._handleReturnHome)
     #===================================================================================================
     #                                                                                 H A N D L E R S
   
     #___________________________________________________________________________________________________ _handleValChange
-    def _handleValChange(self):
-		print("eyebrow angle: "+str(self.eyeSpacingSlider.value()))
-		print("mouth angle: "+str(self.eyeSpacingSlider.value()))
-		print("eye size: "+str(self.eyeSpacingSlider.value()))
-		print("head shape: "+str(self.eyeSpacingSlider.value()))
-		print("eye spacing: "+str(self.eyeSpacingSlider.value()))
-
+    def _handleEyebrowChange(self):
+        eyeAngle = self.eyebrowAngleSlider.value()
+	print("eyebrow angle: "+str(eyeAngle))
+	fc.eyeBrow(eyeAngle)
+        
+  
+    #___________________________________________________________________________________________________ _handleValChange
+    def _handleEyeSpacingChange(self):
+        eyeSpace = self.eyeSpacingSlider.value()
+	print("eye spacing: "+str(eyeSpace))
+	fc.eyeDistance(eyeSpace)
+        
+  
+    #___________________________________________________________________________________________________ _handleValChange
+    def _handleEyeSizeChange(self):
+        eyeSize = self.eyeSizeSlider.value()
+        print("eye size: "+str(eyeSize))
+	fc.eyeEnbiggen(eyeSize)
+        
+  
+    #___________________________________________________________________________________________________ _handleValChange
+    def _handleMouthAngleChange(self):
+        mouthAngle = self.mouthAngleSlider.value()
+        print("Mouth Angle: "+str(mouthAngle))
+	fc.mouth(mouthAngle)
+        
+    #___________________________________________________________________________________________________ _handleValChange
+    def _handleheadShapeChange(self):
+        headShape = self.headShapeSlider.value()
+       	print("head shape: "+str(headShape))
+        fc.head(headShape)
 
 	#___________________________________________________________________________________________________ _handleRunBtn
     def _handleRunBtn(self):
