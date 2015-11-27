@@ -3,13 +3,12 @@ from difflib import SequenceMatcher as sm
 
 # newVal will be between -100 and 100, with negative/positive representing sad and angry respectively
 def eyeBrow(newVal):
-    name = "blendShape1"
     if newVal < 0:
-        nonSuffix = name+".eyeUp"
-        suffix = name+".eyeDown"
+        nonSuffix = "eyeUp.FaceAngry"
+        suffix    = ".eyeDown.FaceSad"
     else:
-        nonSuffix = name+".eyeUp"
-        suffix = name+".eyeDown"
+        suffix    =  "eyeUp.FaceAngry"
+        nonSuffix = ".eyeDown.FaceSad"
     mc.setAttr(nonSuffix,  0.0)
     mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
 
@@ -18,7 +17,7 @@ def eyeDistance(newVal):
     mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
 
 def mouthEnbiggen(newVal):
-    name = "blendShape1.mouthSize"
+    name = "mouthSize.FaceBigMouth"
     mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
 
 def eyeEnbiggen(newVal):
