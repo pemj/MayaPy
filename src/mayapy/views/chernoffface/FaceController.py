@@ -4,11 +4,11 @@ from difflib import SequenceMatcher as sm
 # newVal will be between -100 and 100, with negative/positive representing sad and angry respectively
 def eyeBrow(newVal):
     if newVal < 0:
-        nonSuffix = "eyeUp.FaceAngry"
-        suffix    = ".eyeDown.FaceSad"
+        nonSuffix = "FaceDeformer.FaceAngry"
+        suffix    = "FaceDeformer.FaceSad"
     else:
-        suffix    =  "eyeUp.FaceAngry"
-        nonSuffix = ".eyeDown.FaceSad"
+        suffix    =  "FaceDeformer.FaceAngry"
+        nonSuffix = "FaceDeformer.FaceSad"
     mc.setAttr(nonSuffix,  0.0)
     mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
 
@@ -21,8 +21,22 @@ def mouthEnbiggen(newVal):
     mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
 
 def eyeEnbiggen(newVal):
-    name = "blendShape1.eyeSize"
-    mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
+    if newVal < 0:
+        nonSuffix = "FaceDeformer.FaceBigEye"
+        suffix    = "FaceDeformer.FaceSmallEye"
+    else:
+        suffix    =  "FaceDeformer.FaceBigEye"
+        nonSuffix = "FaceDeformer.FaceSmallEye"
+    mc.setAttr(nonSuffix,  0.0)
+    newP=((newVal/100.0) + 1.0)/2.0 # new percentage
+    mc.setAttr(suffix,  newP)
+    scaleV=newP*1.5 + (1-newP)*.6 #woo guess what I learned in sciviz class?
+    mc.setAttr("LeftEye.scaleZ", scaleV)
+    mc.setAttr("LeftEye.scaleX", scaleV)
+    mc.setAttr("LeftEye.scaleY", scaleV)
+    mc.setAttr("RightEye1.scaleZ", scaleV)
+    mc.setAttr("RightEye1.scaleX", scaleV)
+    mc.setAttr("RightEye1.scaleY", scaleV)
 
 
 def head(newVal):
@@ -31,18 +45,17 @@ def head(newVal):
 
 
 def mouth(newVal):
-    name = "blendShape1"
     if newVal < 0:
-        nonSuffix = name+".faceSmile"
-        suffix = name+".mouthDown"
+        nonSuffix = "FaceDeformer.Face6"
+        suffix    = "FaceDeformer.FaceFrown"
     else:
-        nonSuffix = name+".faceSmile"
-        suffix = name+".mouthDown"
+        suffix    =  "FaceDeformer.Face6"
+        nonSuffix = "FaceDeformer.FaceFrown"
     mc.setAttr(nonSuffix,  0.0)
     mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
 
 
-    
+#this might be extraneous, but I'm a keep it here until I double-check
 def findName(namelike):
     objs = mc.ls()
     bodyName = ""
@@ -57,50 +70,3 @@ def findName(namelike):
     print("query for: \"" + namelike + "\" returns: " + bodyName)
     return bodyName
 
-# alters the aspects of some object.
-def bAlter(bName, timeFrame, changeVal, chStr):
-    mc.select(bName)    
-    startTime = mc.currentTime(query=True)
-    endTime = startTime + timeFrame
-    rotBy = mc.getAttr(bName+ "." + chStr) + changeVal
-    mc.setKeyframe(attribute=chStr)
-    mc.currentTime(endTime)
-    mc.setKeyframe(attribute=chStr, v=rotBy)	
-    mc.currentTime(startTimeTime)
-
-def limbRotate(limbName, timeFrame, changeVal):
-    bAlter(limbName, timeFrame, changeVal, "rotateX")
-    
-def runFrom(bodyName, startTime, endTime):        
-    mc.select(bodyName)
-    #first we start 
-    mc.currentTime(startTime+24)
-    mc.setKeyframe(attribute='translateZ', v=-60)
-    mc.currentTime(endTime)
-    mc.setKeyframe(attribute='translateZ', v=0)
-
-    mc.currentTime(startTime)
-    mc.setKeyframe(attribute='rotateX', v=0)
-    mc.currentTime(startTime+24)
-    mc.setKeyframe(attribute='rotateX', v=385)    
-    mc.currentTime(endTime-24)
-    mc.setKeyframe(attribute='rotateX', v=385)     
-    mc.currentTime(endTime)
-    mc.setKeyframe(attribute='rotateX', v=360)
-     
-    left_leg = findName('leg_R')
-    right_leg = findName('left_L')
-    rTime = startTime
-    lTime = startTime + 6 
-    startVal = 0
-    while (lTime+12) < endTime:
-        rTime = rTime + 12
-        lTime = lTime + 12
-        legRotate(right_leg, rTime, rTime+12, startVal, startVal + 360)
-        legRotate(left_leg, lTime, lTime+12, startVal, startVal+360)
-        startVal = startVal + 360
-    mc.select(right_leg)
-    mc.currentTime(endTime+1)
-    mc.rotate(0,0,0)
-    mc.currentTime(startTime)
-    
