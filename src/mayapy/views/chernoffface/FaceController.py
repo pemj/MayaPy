@@ -11,26 +11,23 @@ def eyeBrow(newVal):
         nonSuffix = "FaceDeformer.FaceSad"
     mc.setAttr(nonSuffix,  0.0)
     mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
-
-def eyeDistance(newVal):
-    name = "blendShape1.eyeWidth"
-    mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
-
+    
 def mouthEnbiggen(newVal):
     name = "mouthSize.FaceBigMouth"
     mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
 
 def eyeEnbiggen(newVal):
+    newP=((newVal/100.0) + 1.0)/2.0 # new percentage
     if newVal < 0:
         nonSuffix = "FaceDeformer.FaceBigEye"
         suffix    = "FaceDeformer.FaceSmallEye"
+        scaleV=newP + (1-newP)*.6 #woo guess what I learned in sciviz class?
     else:
         suffix    =  "FaceDeformer.FaceBigEye"
         nonSuffix = "FaceDeformer.FaceSmallEye"
+        scaleV=newP*1.5 + (1-newP) #woo guess what I learned in sciviz class?
     mc.setAttr(nonSuffix,  0.0)
-    newP=((newVal/100.0) + 1.0)/2.0 # new percentage
     mc.setAttr(suffix,  newP)
-    scaleV=newP*1.5 + (1-newP)*.6 #woo guess what I learned in sciviz class?
     mc.setAttr("LeftEye.scaleZ", scaleV)
     mc.setAttr("LeftEye.scaleX", scaleV)
     mc.setAttr("LeftEye.scaleY", scaleV)
@@ -38,12 +35,8 @@ def eyeEnbiggen(newVal):
     mc.setAttr("RightEye1.scaleX", scaleV)
     mc.setAttr("RightEye1.scaleY", scaleV)
 
-
-def head(newVal):
-    name = "blendShape1.headShape"
-    mc.setAttr(name,  ((newVal/100.0) + 1.0)/2.0))
-
-
+# Face6, I know, it's bad, but Maya loses its shit when I try to
+# change the name of the thing.
 def mouth(newVal):
     if newVal < 0:
         nonSuffix = "FaceDeformer.Face6"
@@ -55,6 +48,39 @@ def mouth(newVal):
     mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
 
 
+
+def head(newVal):
+    if newVal < 0:
+        nonSuffix = "FaceDeformer.FaceTall"
+        suffix    = "FaceDeformer.FaceWide"
+    else:
+        suffix    =  "FaceDeformer.Tall"
+        nonSuffix = "FaceDeformer.FaceWide"
+    mc.setAttr(nonSuffix,  0.0)
+    mc.setAttr(suffix,  ((newVal/100.0) + 1.0)/2.0))
+
+
+#next up
+def eyeDistance(newVal):
+    newP=((newVal/100.0) + 1.0)/2.0 # new percentage
+    if newVal < 0:
+        nonSuffix = "FaceDeformer.FaceWideEye"
+        suffix    = "FaceDeformer.FaceNarrowEye"
+        scaleV=newP*-.25 #woo guess what I learned in sciviz class?
+    else:
+        suffix    =  "FaceDeformer.FaceWideEye"
+        nonSuffix = "FaceDeformer.FaceNarrowEye"
+        scaleV=newP*.5 #woo guess what I learned in sciviz class?
+        
+    mc.setAttr(nonSuffix,  0.0)
+    mc.setAttr(suffix,  newP)
+    ltX = mc.getAttr("LeftEye.translateX")
+    rtX = mc.getAttr("RightEye1.translateX")
+    mc.setAttr("LeftEye.translateX", ltX+scaleV)
+    mc.setAttr("RightEye1.translateX", rtX-scaleV)
+
+
+    
 #this might be extraneous, but I'm a keep it here until I double-check
 def findName(namelike):
     objs = mc.ls()
