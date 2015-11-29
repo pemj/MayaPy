@@ -23,6 +23,7 @@ def mouthEnbiggen(newVal):
         suffix    = "FaceDeformer.FaceSmallMouth"
     else:
         suffix    =  "FaceDeformer.FaceBigMouth"
+        newVal=newVal*.75
         nonSuffix = "FaceDeformer.FaceSmallMouth"
     newVal = abs(newVal)/100.0
     mc.setAttr(nonSuffix,  0.0)
@@ -54,6 +55,7 @@ def mouth(newVal):
         suffix    = "FaceDeformer.FaceFrown"
     else:
         suffix    =  "FaceDeformer.Face6"
+        newVal = newVal*.75
         nonSuffix = "FaceDeformer.FaceFrown"
     newVal = abs(newVal)/100.0
     mc.setAttr(nonSuffix,  0.0)
