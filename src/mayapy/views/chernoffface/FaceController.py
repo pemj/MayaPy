@@ -12,15 +12,21 @@ def eyeBrow(newVal):
     else:
         suffix    =  "FaceDeformer.FaceAngry"
         nonSuffix = "FaceDeformer.FaceSad"
-    newVal = abs(newVal)/100
+    newVal = abs(newVal)/100.0
     mc.setAttr(nonSuffix,  0.0)
     mc.setAttr(suffix, newVal)
     
 # This one needs some work    
 def mouthEnbiggen(newVal):
-    newVal = abs(newVal)/100
-    name = "FaceDeformer.FaceBigMouth"
-    mc.setAttr(name,  newVal)
+    if newVal < 0:
+        nonSuffix = "FaceDeformer.FaceBigMouth"
+        suffix    = "FaceDeformer.FaceSmallMouth"
+    else:
+        suffix    =  "FaceDeformer.FaceBigMouth"
+        nonSuffix = "FaceDeformer.FaceSmallMouth"
+    newVal = abs(newVal)/100.0
+    mc.setAttr(nonSuffix,  0.0)
+    mc.setAttr(suffix,  newVal)
 
 def eyeEnbiggen(newVal):
     newP=abs(newVal)/100.0 # new percentage
@@ -49,7 +55,7 @@ def mouth(newVal):
     else:
         suffix    =  "FaceDeformer.Face6"
         nonSuffix = "FaceDeformer.FaceFrown"
-    newVal = abs(newVal)/100
+    newVal = abs(newVal)/100.0
     mc.setAttr(nonSuffix,  0.0)
     mc.setAttr(suffix,  newVal)
 
@@ -62,7 +68,7 @@ def head(newVal):
     else:
         suffix    =  "FaceDeformer.FaceTall"
         nonSuffix = "FaceDeformer.FaceWide"
-    newVal = abs(newVal)/100
+    newVal = abs(newVal)/100.0
     mc.setAttr(nonSuffix,  0.0)
     mc.setAttr(suffix, newVal)
 
