@@ -28,6 +28,17 @@ class ChernoffFaceWidget(PyGlassWidget):
 	# nav pane
         self.runBtn.clicked.connect(self._handleRunBtn)
         self.homeBtn.clicked.connect(self._handleReturnHome)
+    # set all to default values to reflect current state of sliders
+        self._setDefaultValues()
+
+    def _setDefaultValues(self):
+        self._handleEyebrowChange()
+        self._handleMouthAngleChange()
+        self._handleEyeSizeChange()
+        self._handleMouthSizeChange()
+        self._handleHeadShapeChange()
+        self._handleEyeSpacingChange()
+
     #===================================================================================================
     #                                                                                 H A N D L E R S
   

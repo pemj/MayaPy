@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>205</width>
+    <width>413</width>
     <height>332</height>
    </rect>
   </property>
@@ -80,6 +80,9 @@
        <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="pageStep">
+        <number>50</number>
+       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -114,6 +117,9 @@
        </property>
        <property name="singleStep">
         <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>50</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -150,8 +156,11 @@
        <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="pageStep">
+        <number>50</number>
+       </property>
        <property name="tracking">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -194,6 +203,9 @@
        <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="pageStep">
+        <number>50</number>
+       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -229,6 +241,9 @@
        <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="pageStep">
+        <number>50</number>
+       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -263,6 +278,9 @@
        </property>
        <property name="singleStep">
         <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>50</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
