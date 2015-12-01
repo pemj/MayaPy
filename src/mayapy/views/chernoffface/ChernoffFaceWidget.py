@@ -44,41 +44,41 @@ class ChernoffFaceWidget(PyGlassWidget):
   
     #___________________________________________________________________________________________________ _handleValChange
     def _handleEyebrowChange(self):
-        eyeAngle = self.eyebrowAngleSlider.value()
+        eyeAngle = self.eyebrowAngleSlider.value() * 10
 	print("eyebrow angle: "+str(eyeAngle))
 	fc.eyeBrow(eyeAngle)
         
   
     #___________________________________________________________________________________________________ _handleValChange
     def _handleEyeSpacingChange(self):
-        eyeSpace = self.eyeSpacingSlider.value()
+        eyeSpace = self.eyeSpacingSlider.value() * 10
 	print("eye spacing: "+str(eyeSpace))
 	fc.eyeDistance(eyeSpace)
         
   
     #___________________________________________________________________________________________________ _handleValChange
     def _handleMouthSizeChange(self):
-        mouthSize = self.mouthSizeSlider.value()
+        mouthSize = self.mouthSizeSlider.value() * 10
         print("mouth size: "+str(mouthSize))
 	fc.mouthEnbiggen(mouthSize)
         
   
     #___________________________________________________________________________________________________ _handleValChange
     def _handleEyeSizeChange(self):
-        eyeSize = self.eyeSizeSlider.value()
+        eyeSize = self.eyeSizeSlider.value() * 10
         print("eye size: "+str(eyeSize))
 	fc.eyeEnbiggen(eyeSize)
         
   
     #___________________________________________________________________________________________________ _handleValChange
     def _handleMouthAngleChange(self):
-        mouthAngle = self.mouthAngleSlider.value()
+        mouthAngle = self.mouthAngleSlider.value() * 10
         print("Mouth Angle: "+str(mouthAngle))
 	fc.mouth(mouthAngle)
         
     #___________________________________________________________________________________________________ _handleValChange
     def _handleHeadShapeChange(self):
-        headShape = self.headShapeSlider.value()
+        headShape = self.headShapeSlider.value() * 10
        	print("head shape: "+str(headShape))
         fc.head(headShape)
 

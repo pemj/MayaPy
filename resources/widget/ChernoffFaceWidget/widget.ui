@@ -72,16 +72,16 @@
         </sizepolicy>
        </property>
        <property name="minimum">
-        <number>-100</number>
+        <number>-10</number>
        </property>
        <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
        <property name="pageStep">
-        <number>50</number>
+        <number>1</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -90,7 +90,7 @@
         <enum>QSlider::TicksAbove</enum>
        </property>
        <property name="tickInterval">
-        <number>50</number>
+        <number>5</number>
        </property>
       </widget>
      </item>
@@ -110,16 +110,16 @@
         </sizepolicy>
        </property>
        <property name="minimum">
-        <number>-100</number>
+        <number>-10</number>
        </property>
        <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
        <property name="pageStep">
-        <number>50</number>
+        <number>1</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -128,7 +128,7 @@
         <enum>QSlider::TicksAbove</enum>
        </property>
        <property name="tickInterval">
-        <number>50</number>
+        <number>5</number>
        </property>
       </widget>
      </item>
@@ -148,16 +148,16 @@
         <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="minimum">
-        <number>-100</number>
+        <number>-10</number>
        </property>
        <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
        <property name="pageStep">
-        <number>50</number>
+        <number>1</number>
        </property>
        <property name="tracking">
         <bool>true</bool>
@@ -175,7 +175,7 @@
         <enum>QSlider::TicksAbove</enum>
        </property>
        <property name="tickInterval">
-        <number>50</number>
+        <number>5</number>
        </property>
       </widget>
      </item>
@@ -195,16 +195,16 @@
         </sizepolicy>
        </property>
        <property name="minimum">
-        <number>-100</number>
+        <number>-10</number>
        </property>
        <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
        <property name="pageStep">
-        <number>50</number>
+        <number>1</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -213,7 +213,7 @@
         <enum>QSlider::TicksAbove</enum>
        </property>
        <property name="tickInterval">
-        <number>50</number>
+        <number>5</number>
        </property>
       </widget>
      </item>
@@ -233,16 +233,16 @@
         </sizepolicy>
        </property>
        <property name="minimum">
-        <number>-100</number>
+        <number>-10</number>
        </property>
        <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="singleStep">
         <number>10</number>
        </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
        <property name="pageStep">
-        <number>50</number>
+        <number>1</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -251,7 +251,7 @@
         <enum>QSlider::TicksAbove</enum>
        </property>
        <property name="tickInterval">
-        <number>50</number>
+        <number>5</number>
        </property>
       </widget>
      </item>
@@ -271,13 +271,13 @@
         </sizepolicy>
        </property>
        <property name="minimum">
-        <number>-100</number>
+        <number>-10</number>
        </property>
        <property name="maximum">
-        <number>100</number>
+        <number>10</number>
        </property>
        <property name="singleStep">
-        <number>10</number>
+        <number>1</number>
        </property>
        <property name="pageStep">
         <number>50</number>
