@@ -19,12 +19,12 @@ class ChernoffFaceWidget(PyGlassWidget):
         """Creates a new instance of ChernoffFaceWidget."""
         super(ChernoffFaceWidget, self).__init__(parent, **kwargs)
 	# slider pane
-        self.eyebrowAngleSlider.sliderReleased.connect(self._handleEyebrowChange)
-        self.mouthAngleSlider.sliderReleased.connect(self._handleMouthAngleChange)
-        self.eyeSizeSlider.sliderReleased.connect(self._handleEyeSizeChange)
-        self.mouthSizeSlider.sliderReleased.connect(self._handleMouthSizeChange)
-        self.headShapeSlider.sliderReleased.connect(self._handleHeadShapeChange)
-        self.eyeSpacingSlider.sliderReleased.connect(self._handleEyeSpacingChange)
+        self.eyebrowAngleSlider.valueChanged.connect(self._handleEyebrowChange)
+        self.mouthAngleSlider.valueChanged.connect(self._handleMouthAngleChange)
+        self.eyeSizeSlider.valueChanged.connect(self._handleEyeSizeChange)
+        self.mouthSizeSlider.valueChanged.connect(self._handleMouthSizeChange)
+        self.headShapeSlider.valueChanged.connect(self._handleHeadShapeChange)
+        self.eyeSpacingSlider.valueChanged.connect(self._handleEyeSpacingChange)
 	# nav pane
         self.runBtn.clicked.connect(self._handleRunBtn)
         self.homeBtn.clicked.connect(self._handleReturnHome)
