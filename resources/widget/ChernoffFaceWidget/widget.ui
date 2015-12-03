@@ -48,7 +48,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QFormLayout" name="manualControl">
+    <layout class="QFormLayout" name="manualControlPane">
      <item row="1" column="1">
       <widget class="QSlider" name="headShapeSlider">
        <property name="sizePolicy">
@@ -296,7 +296,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QFormLayout" name="censusData">
+    <layout class="QFormLayout" name="censusDataPane">
      <property name="fieldGrowthPolicy">
       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
      </property>
@@ -330,7 +330,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QLineEdit" name="longitudeLineEdit"/>
      </item>
      <item row="5" column="0" colspan="2">
-      <widget class="QPushButton" name="calculateCensueDataButton">
+      <widget class="QPushButton" name="calculateCensusBtn">
        <property name="text">
         <string>Calculate</string>
        </property>
