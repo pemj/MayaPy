@@ -32,10 +32,3 @@ def getInfo(lat, lon):
         return req.status_code
     return req
 
-# <var xml:id="DP03_0094E" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for female full-time, year-round workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
-# <var xml:id="DP03_0094M" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for female full-time, year-round workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
-# <var xml:id="DP03_0093M" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for male full-time, year-round workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
-# <var xml:id="DP03_0093E" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for male full-time, year-round workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
-
-# <var xml:id="DP03_0092M" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
-# <var xml:id="DP03_0092E" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
