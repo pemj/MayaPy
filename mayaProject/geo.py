@@ -26,10 +26,10 @@ def getInfo(lat, lon):
     queryString += "&for=tract:" + tractCode + "&in=state: " + stateCode
     queryString += "+county:" + countyCode + "&key=" + key
     req = requests.get(queryString)
-    if req.status is 200:
+    if req.status_code is 200:
         req = req.json()
     else:
-        return req.status
+        return req.status_code
     return req
 
 # <var xml:id="DP03_0094E" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for female full-time, year-round workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
