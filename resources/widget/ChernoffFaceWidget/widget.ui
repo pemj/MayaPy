@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>683</width>
-    <height>231</height>
+    <height>240</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -314,8 +314,8 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Enter a Latitude and Longitude indicating an area of interest. Press calculate and we will gather census data local to that location and calculate a Chernoff Face for that data.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;The sliders will be adjusted to reflect the calculation.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;1. Enter a Latitude and Longitude indicating an geographical area of interest. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;2. Press calculate and we will gather census data local to that location and calculate a Chernoff Face for that data. The sliders will be adjusted to reflect the calculation and the Maya Scene will be automatically updated to reflect these changes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -327,7 +327,11 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="longitudeLineEdit"/>
+      <widget class="QLineEdit" name="longitudeLineEdit">
+       <property name="text">
+        <string>-123.071046</string>
+       </property>
+      </widget>
      </item>
      <item row="5" column="0" colspan="2">
       <widget class="QPushButton" name="calculateCensusBtn">
@@ -337,7 +341,11 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="latitudeLineEdit"/>
+      <widget class="QLineEdit" name="latitudeLineEdit">
+       <property name="text">
+        <string>44.045838</string>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="latitudeLabel">
