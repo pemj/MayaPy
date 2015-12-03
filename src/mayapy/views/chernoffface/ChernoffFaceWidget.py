@@ -8,14 +8,14 @@ from nimble import cmds
 from pyglass.widgets.PyGlassWidget import PyGlassWidget
 import re
 import FaceController as fc
+from geo import getCensusData
 
 def _validateCoordString(coord_str):
     if not re.match("^(\-?\d+(\.\d+)?)$", coord_str):
         raise Exception("Unable to use this coordinate!")
     return coord_str
 
-def getCensusData(param, param1):
-	return -10.0, -5.0, 0.0, 5.0, 10.0, 0.0
+
 
 #___________________________________________________________________________________________________ ChernoffFaceWidget
 class ChernoffFaceWidget(PyGlassWidget):
