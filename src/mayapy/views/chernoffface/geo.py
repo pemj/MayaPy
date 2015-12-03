@@ -35,9 +35,9 @@ def getCensusData(lat, lon):
     # gender counts for male, female
     dataCode = "B08006_018E,B08006_035E"
     # male drove, carpooled, public, bike, walk (2, 3, 4, 5, 6)
-    dataCode += ",B08006_020E,B08006_021E,B08006_025E,B08006_031E,B08006_032E"
+    dataCode += ",B08006_020E,B08006_021E,B08006_025E,B08006_031E,B08006_032E,B08006_034E"
     # female drove, carpooled, public, bike, walk (7,8,9,10,11
-    dataCode += ",B08006_037E,B08006_038E,B08006_042E,B08006_048E,B08006_049E"
+    dataCode += ",B08006_037E,B08006_038E,B08006_042E,B08006_048E,B08006_049E,B08006_051E"
     k = getInfo(lat, lon, dataCode)
     k = k[1]
     print(k)
@@ -47,18 +47,18 @@ def getCensusData(lat, lon):
     totalMale = a[0]
     totalFemale = a[1]
     totG = totalMale + totalFemale
-    ret = [0, 0, 0, 0, 0]
-    for mn in range(2,6):
+    ret = [0, 0, 0, 0, 0, 0]
+    for mn in range(2,7):
         if (a[mn+5] == 0 and a[mn] == 0):
             ret[mn - 2] = 0
         else:
-            ret[mn - 2] = a[mn+5]*(totalMale/totalFemale)/(a[mn+5]+a[mn])
+            ret[mn - 2] = a[mn+5]*(totalMale/totalFemale)/(a[mn+6]+a[mn])
             ret[mn - 2] = (ret[mn - 2] - .5) * 10
             ret[mn - 2] = int(round(ret[mn - 2], 0))
             # ret[mn - 2] = 
     # do things
     
-    return (ret[0], ret[1], ret[2], ret[3], ret[4])
+    return (ret[0], ret[1], ret[2], ret[3], ret[4], ret[5])
 
 
 #didnot:
