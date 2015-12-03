@@ -9,7 +9,10 @@ def getFIPS(lat, lon, lev):
 
     FIPS = fResponse.json()[lev]['FIPS']
     return FIPS
-
+'''
+Returns a list which contains two lists. The first list is a list of 'keys'
+[[u'B00001_001E', u'state', u'county', u'tract'], [u'226', u'41', u'039', u'004600']]
+'''
 def getInfo(lat, lon):
     
     # first we set our API key. This will expire before too long, but
@@ -30,7 +33,10 @@ def getInfo(lat, lon):
         req = req.json()
     else:
         return req.status_code
-    return req
+    ret = {}
+    for i in range(len(req[0])):
+        ret[req[0][i]] = req[1][i]
+    return ret
 
 # <var xml:id="DP03_0094E" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for female full-time, year-round workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
 # <var xml:id="DP03_0094M" label="INCOME AND BENEFITS (IN 2013 INFLATION-ADJUSTED DOLLARS)!!Median earnings for female full-time, year-round workers (dollars)" concept="SELECTED ECONOMIC CHARACTERISTICS" predicate-type="int"/>
