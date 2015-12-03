@@ -6,28 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>413</width>
-    <height>332</height>
+    <width>683</width>
+    <height>231</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QWidget" name="NavPane" native="true">
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QWidget" name="navigationPane" native="true">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QLabel" name="assinmentlabel">
         <property name="text">
          <string>Project</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="runBtn">
-        <property name="text">
-         <string>Generate</string>
         </property>
        </widget>
       </item>
@@ -39,7 +32,7 @@
        </widget>
       </item>
       <item>
-       <spacer name="navSpacer">
+       <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -54,17 +47,10 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="1">
-    <layout class="QVBoxLayout" name="SliderPane">
-     <item>
-      <widget class="QLabel" name="eyebrowAngleTag">
-       <property name="text">
-        <string>Eyebrow Angle:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="eyebrowAngleSlider">
+   <item>
+    <layout class="QFormLayout" name="manualControl">
+     <item row="1" column="1">
+      <widget class="QSlider" name="headShapeSlider">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -94,52 +80,7 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="mouthAngleTag">
-       <property name="text">
-        <string>Mouth Angle:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="mouthAngleSlider">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimum">
-        <number>-10</number>
-       </property>
-       <property name="maximum">
-        <number>10</number>
-       </property>
-       <property name="singleStep">
-        <number>1</number>
-       </property>
-       <property name="pageStep">
-        <number>1</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksAbove</enum>
-       </property>
-       <property name="tickInterval">
-        <number>5</number>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="mouthSizeTag">
-       <property name="text">
-        <string>Mouth Size</string>
-       </property>
-      </widget>
-     </item>
-     <item>
+     <item row="2" column="1">
       <widget class="QSlider" name="mouthSizeSlider">
        <property name="enabled">
         <bool>true</bool>
@@ -179,14 +120,21 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="eyeSizeTag">
+     <item row="2" column="0">
+      <widget class="QLabel" name="mouthSizeTag">
        <property name="text">
-        <string>Eye Size:</string>
+        <string>Mouth Size</string>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="headShapeTag">
+       <property name="text">
+        <string>Head Shape:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
       <widget class="QSlider" name="eyeSizeSlider">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -217,52 +165,14 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="headShapeTag">
+     <item row="3" column="0">
+      <widget class="QLabel" name="eyeSizeTag">
        <property name="text">
-        <string>Head Shape:</string>
+        <string>Eye Size:</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QSlider" name="headShapeSlider">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimum">
-        <number>-10</number>
-       </property>
-       <property name="maximum">
-        <number>10</number>
-       </property>
-       <property name="singleStep">
-        <number>1</number>
-       </property>
-       <property name="pageStep">
-        <number>1</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksAbove</enum>
-       </property>
-       <property name="tickInterval">
-        <number>5</number>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="eyeSpacingTag">
-       <property name="text">
-        <string>Eye Spacing:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
+     <item row="4" column="1">
       <widget class="QSlider" name="eyeSpacingSlider">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -293,33 +203,150 @@
        </property>
       </widget>
      </item>
-     <item>
-      <spacer name="sliderSpacer">
+     <item row="4" column="0">
+      <widget class="QLabel" name="eyeSpacingTag">
+       <property name="text">
+        <string>Eye Spacing:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QSlider" name="mouthAngleSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>-10</number>
+       </property>
+       <property name="maximum">
+        <number>10</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
+       </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
+       <property name="tickPosition">
+        <enum>QSlider::TicksAbove</enum>
        </property>
-      </spacer>
+       <property name="tickInterval">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="mouthAngleTag">
+       <property name="text">
+        <string>Mouth Angle:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSlider" name="eyebrowAngleSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>-10</number>
+       </property>
+       <property name="maximum">
+        <number>10</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksAbove</enum>
+       </property>
+       <property name="tickInterval">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="eyebrowAngleTag">
+       <property name="text">
+        <string>Eyebrow Angle:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="Section1Label">
+       <property name="text">
+        <string>Manual Data Input</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
-   <item row="0" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+   <item>
+    <layout class="QFormLayout" name="censusData">
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
+     <item row="0" column="0">
+      <widget class="QLabel" name="Section2Label">
+       <property name="text">
+        <string>Census Data Input</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QTextBrowser" name="section2Description">
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Enter a Latitude and Longitude indicating an area of interest. Press calculate and we will gather census data local to that location and calculate a Chernoff Face for that data.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;The sliders will be adjusted to reflect the calculation.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="longitudeLabel">
+       <property name="text">
+        <string>Longitude</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="longitudeLineEdit"/>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QPushButton" name="calculateCensueDataButton">
+       <property name="text">
+        <string>Calculate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="latitudeLineEdit"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="latitudeLabel">
+       <property name="text">
+        <string>Latitude</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
