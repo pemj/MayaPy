@@ -47,15 +47,19 @@ def getCensusData(lat, lon):
     totalMale = a[0]
     totalFemale = a[1]
     totG = totalMale + totalFemale
-    ret = [0, 0, 0, 0, 0, 0]
+    ret = []
     for mn in range(2,7):
-        if (a[mn+5] == 0 and a[mn] == 0):
-            ret[mn - 2] = 0
+        fi = mn + 6
+        tV = 0.0
+        if (a[fi] == 0 and a[mn] == 0):
+            tV = 0
         else:
-            ret[mn - 2] = a[mn+5]*(totalMale/totalFemale)/(a[mn+6]+a[mn])
-            ret[mn - 2] = (ret[mn - 2] - .5) * 10
-            ret[mn - 2] = int(round(ret[mn - 2], 0))
-            # ret[mn - 2] = 
+            tV = a[fi]*(totalMale/totalFemale)/(a[fi]+a[mn])
+            tV = (tV - .5) * 10
+            tV = int(round(tV, 0))
+
+        ret.append(tV)
+    # ret[mn - 2] = 
     # do things
     
     return (ret[0], ret[1], ret[2], ret[3], ret[4], ret[5])
